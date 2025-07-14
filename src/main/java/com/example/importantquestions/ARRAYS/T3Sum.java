@@ -10,6 +10,6 @@ public class T3Sum {
         for(int i=0;i<n;i++){
             a[i]=sc.nextInt();
         }
-        tsum(a);
+
     }
 }

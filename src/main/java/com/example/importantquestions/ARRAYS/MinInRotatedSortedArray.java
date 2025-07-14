@@ -13,25 +13,48 @@ public class MinInRotatedSortedArray {
        System.out.print( mininsorted(arr));
 
     }
-    public static int mininsorted(int[] a){
-        int left=0;
-        int right=a.length-1;
-        int ans=a[0];
-        if(a.length==1){
+    public static int mininsorted(int[] a) {
+        int left = 0;
+        int right = a.length - 1;
+        int ans = a[0];
+        if (a.length == 1) {
             return a[0];
         }
-        while(left<right){
-            if(a[left]<a[right]){
-                ans=Math.min(ans,a[left]);
+        while (left < right) {
+            if (a[left] < a[right]) {
+                ans = Math.min(ans, a[left]);
             }
-            int mid=(left+right)/2;
-            ans=Math.min(ans,a[mid]);
-            if(a[left]<=a[mid]){
-                left=mid+1;
-            }else
-                right=mid-1;
+            int mid = (left + right) / 2;
+            ans = Math.min(ans, a[mid]);
+            if (a[left] <= a[mid]) {
+                left = mid + 1;
+            } else
+                right = mid - 1;
 
         }
         return ans;
+    }}
+
+/*
+this logic passed all the testcases in leetcode
+class Solution {
+    public int findMin(int[] nums) {
+        int left=0;
+        int right=nums.length-1;
+        int ans=nums[0];
+        if(nums.length==1)
+            return nums[0];
+        while(left<right){
+            if(nums[left]<nums[right])
+                ans=Math.min(ans,nums[left]);
+            int mid=(left+right)/2;
+            ans=Math.min(ans,nums[mid]);
+            if (nums[mid] > nums[right])
+                left=mid+1;
+            else
+                right=mid;
+        }
+    return nums[left];
     }
 }
+ */
